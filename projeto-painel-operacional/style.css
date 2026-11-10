@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+body {
+  margin: 0;
+  color: #333333;
+  background: #ffffff;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
+}
+aside {
+  background: #333333;
+  color: #ffffff;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+h1 {
+  font-size: 21px;
+}
+h2 {
+  font-size: 20px;
+}
+p {
+  line-height: 1.5;
+}
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+aside h2 {
+  font-size: 16px;
+}
+aside nav {
+  display: grid;
+}
+button {
+  cursor: pointer;
+  padding: 10px 16px;
+  background: #333333;
+  color: #ffffff;
+  border: 1px solid #333333;
+  border-radius: 4px;
+  font-size: 14px;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #483dad;
+  outline-offset: 3px;
+}
+aside nav button {
+  border-radius: 0;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  margin-bottom: 8px;
+}
+.ativo,
+button[aria-current="page"],
+.filtros button[aria-pressed="true"] {
+  background: #483dad;
+  color: #ffffff;
+}
+footer {
+  margin-top: auto;
+  font-size: 12px;
+}
+.sociais {
+  display: flex;
+  gap: 16px;
+}
+.sociais img {
+  width: 22px;
+  height: 22px;
+  filter: invert(1);
+}
+main {
+  padding: 24px 32px;
+  min-width: 0;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+#autenticacao {
+  background: #ffffff;
+  color: #333333;
+}
+#autenticacao.logado {
+  background: #333333;
+  color: #ffffff;
+}
+.filtros {
+  background: #333333;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+#feed {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+article {
+  border: 1px solid #333333;
+  border-radius: 4px;
+  padding: 20px;
+}
+article h3,
+.centralizado {
+  text-align: center;
+}
+article h3 {
+  margin-top: 0;
+}
+.operador {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.interacoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.icone {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  color: #333333;
+}
+.icone img,
+.fechar img {
+  width: 20px;
+  height: 20px;
+}
+.reagido {
+  color: #ff0000;
+  border-color: #ff0000;
+}
+.reagido img {
+  filter: invert(13%) sepia(100%) saturate(7484%) hue-rotate(0deg);
+}
+.comentarios {
+  border-top: 1px solid #333333;
+  margin-top: 16px;
+  padding-top: 12px;
+}
+.comentarios p {
+  overflow-wrap: anywhere;
+}
+.comentarios form {
+  margin: 0;
+}
+#paginacao {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+form {
+  display: grid;
+  gap: 8px;
+  max-width: 480px;
+  margin: 24px auto;
+}
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #333333;
+  border-radius: 4px;
+  font-size: 15px;
+}
+label {
+  margin-top: 8px;
+}
+.erro {
+  color: #ff0000;
+}
+[aria-invalid="true"] {
+  border-color: #ff0000;
+}
+dialog {
+  border: 1px solid #333333;
+  border-radius: 6px;
+  padding: 28px;
+  width: min(440px, 92vw);
+  color: #333333;
+}
+dialog::backdrop {
+  background: rgb(0 0 0 / 55%);
+}
+dialog form {
+  margin-bottom: 0;
+}
+.fechar {
+  float: right;
+  background: #ffffff;
+  padding: 4px;
+  border: 0;
+}
+.acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+.cancelar {
+  background: transparent;
+  color: #333333;
+}
+[hidden] {
+  display: none !important;
+}
+@media (max-width: 760px) {
+  body {
+    grid-template-columns: 1fr;
+  }
+  aside {
+    gap: 12px;
+  }
+  footer {
+    margin-top: 12px;
+  }
+  main {
+    padding: 20px 16px;
+  }
+  #feed {
+    grid-template-columns: 1fr;
+  }
+  header h2 {
+    font-size: 18px;
+  }
+}

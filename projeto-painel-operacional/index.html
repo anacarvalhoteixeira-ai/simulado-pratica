@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Painel Operacional</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <aside>
+      <div class="marca">
+        <img
+          src="assets/logo-empresa.png"
+          alt="Logo da empresa"
+          width="56"
+          height="56"
+        />
+        <h1>Painel Operacional</h1>
+      </div>
+      <section id="perfil" aria-label="Perfil do operador"></section>
+      <section aria-label="Indicadores da planta">
+        <h2>Indicadores da planta</h2>
+        <p>Total de apontamentos: <strong id="total">0</strong></p>
+        <p>Horas acumuladas: <strong id="horas">0</strong> h</p>
+      </section>
+      <nav>
+        <button id="inicio">Início</button
+        ><button id="registros" disabled>Registros</button>
+      </nav>
+      <footer>
+        <p>Painel Integrado de Apontamentos Operacionais</p>
+        <div class="sociais">
+          <img src="assets/instagram.svg" alt="Instagram" /><img
+            src="assets/twitter.svg"
+            alt="Twitter"
+          /><img src="assets/linkedin.svg" alt="LinkedIn" />
+        </div>
+        <p>Copyright-2026</p>
+      </footer>
+    </aside>
+    <main>
+      <header>
+        <h2>Apontamentos operacionais</h2>
+        <button id="autenticacao">Login</button>
+      </header>
+      <section id="listagem">
+        <nav class="filtros" aria-label="Filtrar apontamentos">
+          <button data-filtro="">Todos</button
+          ><button data-filtro="manutenção">manutenção</button
+          ><button data-filtro="operação">operação</button
+          ><button data-filtro="inspeção">inspeção</button>
+        </nav>
+        <div id="feed" aria-live="polite"></div>
+        <nav id="paginacao" aria-label="Paginação"></nav>
+      </section>
+      <section id="cadastro" hidden>
+        <h2 class="centralizado">Crie seu registro</h2>
+        <form id="form-registro" novalidate>
+          <label for="tipo">Tipo de Apontamento</label
+          ><input
+            id="tipo"
+            list="tipos"
+            placeholder="manutenção, operação ou inspeção"
+            required
+          /><datalist id="tipos">
+            <option value="manutenção"></option>
+            <option value="operação"></option>
+            <option value="inspeção"></option></datalist
+          ><small id="erro-tipo" class="erro"></small>
+          <label for="metros">Deslocamento/Área (metros)</label
+          ><input
+            id="metros"
+            type="number"
+            min="0"
+            step="any"
+            placeholder="Ex.: 3500"
+            required
+          /><small id="erro-metros" class="erro"></small>
+          <label for="minutos">Tempo de Execução (minutos)</label
+          ><input
+            id="minutos"
+            type="number"
+            min="0.01"
+            step="any"
+            placeholder="Ex.: 90"
+            required
+          /><small id="erro-minutos" class="erro"></small>
+          <button type="submit">Criar Registro</button>
+        </form>
+      </section>
+    </main>
+    <dialog id="modal" aria-labelledby="titulo-login">
+      <button id="fechar" class="fechar" aria-label="Fechar login">
+        <img src="assets/x.svg" alt="Fechar" />
+      </button>
+      <h2 id="titulo-login">Login</h2>
+      <p>Demonstração: operador@empresa.com<br />Senha: 123456</p>
+      <form id="form-login" novalidate>
+        <label for="email">E-mail</label
+        ><input
+          id="email"
+          type="email"
+          autocomplete="username"
+          placeholder="Seu e-mail"
+        /><small id="erro-email" class="erro"></small>
+        <label for="senha">Senha</label
+        ><input
+          id="senha"
+          type="password"
+          autocomplete="current-password"
+          placeholder="Sua senha"
+        /><small id="erro-senha" class="erro"></small>
+        <div class="acoes">
+          <button id="cancelar" type="button" class="cancelar">Cancelar</button
+          ><button type="submit">Login</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>
